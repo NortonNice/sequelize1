@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
 }, {
     classMethods: {
       associate: function(models){
-        //associations can be defined here
+        User.hasMany(models.Context, {
+          foreignKey: 'UserId',
+	      onDelete: 'CASCADE'
+        });  //associations can be defined here
       }
     }
   });
