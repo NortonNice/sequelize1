@@ -19,6 +19,14 @@ module.exports = {
       done: {
         type: Sequelize.BOOLEAN
       },
+      ContextId: {
+        type: Sequelize.UUID,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Contexts',
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
